@@ -13,10 +13,15 @@ const Search = ({
     flexDirection
   }) => {
     const apiRequest = () => {
+      let response;
         axios.get(`https://jsonplaceholder.typicode.com/users`)
         .then(res => {
           const persons = res.data;
-          alert(persons);
+          response = Object.entries(persons);
+          const responseForEach = response.map(item => {
+            return item;
+          });
+          console.log(responseForEach);
         })
     }
    
